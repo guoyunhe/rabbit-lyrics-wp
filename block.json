@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"name": "rabbit-lyrics/lyrics",
+	"title": "Rabbit Lyrics",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "JavaScript audio and timed lyrics synchronizer.",
+	"textdomain": "rabbit-lyrics",
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css",
+	"script": "file:./build/script.js"
+}
