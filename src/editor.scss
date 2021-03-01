@@ -1,9 +1,9 @@
 /**
  * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-rabbit-lyrics {
-	border: 1px dotted #f00;
+.wp-block-rabbit-lyrics-lyrics {
+	.components-textarea-control__input {
+		font-family: monospace;
+	}
 }

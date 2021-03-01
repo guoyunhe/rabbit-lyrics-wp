@@ -35,11 +35,10 @@ import "./editor.scss";
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	const blockProps = useBlockProps({ className: "rabbit-lyrics" });
+	const blockProps = useBlockProps();
 	return (
 		<div {...blockProps}>
 			<TextareaControl
-				label={__("Lyrics", "rabbit-lyrics")}
 				value={attributes.lyrics}
 				onChange={(val) => setAttributes({ lyrics: val })}
 			/>
