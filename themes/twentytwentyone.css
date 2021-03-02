@@ -1,0 +1,17 @@
+.wp-block-rabbit-lyrics-lyrics.rabbit-lyrics {
+	border: 1px solid currentColor;
+	background: transparent;
+	scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+}
+
+.wp-block-rabbit-lyrics-lyrics .rabbit-lyrics__line--active {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+html.is-dark-theme .wp-block-rabbit-lyrics-lyrics.rabbit-lyrics {
+	scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+html.is-dark-theme .wp-block-rabbit-lyrics-lyrics .rabbit-lyrics__line--active {
+	background-color: rgba(255, 255, 255, 0.1);
+}
