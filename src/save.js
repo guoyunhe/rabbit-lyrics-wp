@@ -24,5 +24,13 @@ import { useBlockProps } from "@wordpress/block-editor";
  */
 export default function Save({ attributes }) {
 	const blockProps = useBlockProps.save({ className: "rabbit-lyrics" });
-	return <div {...blockProps}>{attributes.lyrics}</div>;
+	return (
+		<div
+			{...blockProps}
+			data-alignment={attributes.alignment}
+			data-view-mode={attributes.viewMode}
+		>
+			{attributes.lyrics}
+		</div>
+	);
 }

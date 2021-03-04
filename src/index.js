@@ -92,5 +92,19 @@ registerBlockType("rabbit-lyrics/lyrics", {
 			source: "text",
 			selector: "div",
 		},
+		alignment: {
+			type: "string",
+			default: "center",
+			source: "attribute",
+			selector: "div",
+			attribute: "data-alignment",
+		},
+		viewMode: {
+			type: "string",
+			default: "clip",
+			source: "attribute",
+			selector: "div",
+			attribute: "data-view-mode",
+		},
 	},
 });

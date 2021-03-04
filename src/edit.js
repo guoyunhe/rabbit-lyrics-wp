@@ -11,7 +11,11 @@ import { __ } from "@wordpress/i18n";
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from "@wordpress/block-editor";
+import {
+	useBlockProps,
+	AlignmentToolbar,
+	BlockControls,
+} from "@wordpress/block-editor";
 
 /**
  * Built-in components from WordPress.
@@ -38,6 +42,14 @@ export default function Edit({ attributes, setAttributes }) {
 	const blockProps = useBlockProps();
 	return (
 		<div {...blockProps}>
+			{
+				<BlockControls>
+					<AlignmentToolbar
+						value={attributes.alignment}
+						onChange={(val) => setAttributes({ alignment: val })}
+					/>
+				</BlockControls>
+			}
 			<TextareaControl
 				value={attributes.lyrics}
 				onChange={(val) => setAttributes({ lyrics: val })}
