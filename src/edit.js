@@ -11,16 +11,19 @@ import { __ } from "@wordpress/i18n";
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import {
-	useBlockProps,
-	AlignmentToolbar,
-	BlockControls,
-} from "@wordpress/block-editor";
+import { useBlockProps } from "@wordpress/block-editor";
 
 /**
  * Built-in components from WordPress.
  */
-import { TextareaControl } from "@wordpress/components";
+import {
+	Flex,
+	FlexBlock,
+	FlexItem,
+	ExternalLink,
+	SelectControl,
+	TextareaControl,
+} from "@wordpress/components";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -42,17 +45,50 @@ export default function Edit({ attributes, setAttributes }) {
 	const blockProps = useBlockProps();
 	return (
 		<div {...blockProps}>
-			{
-				<BlockControls>
-					<AlignmentToolbar
+			<Flex>
+				<FlexBlock>
+					<SelectControl
+						label={__("Alignment")}
 						value={attributes.alignment}
 						onChange={(val) => setAttributes({ alignment: val })}
+						options={[
+							{ value: "left", label: __("Left") },
+							{ value: "center", label: __("Center") },
+							{ value: "right", label: __("Right") },
+						]}
 					/>
-				</BlockControls>
-			}
+				</FlexBlock>
+				<FlexBlock>
+					<SelectControl
+						label={__("View mode")}
+						value={attributes.viewMode}
+						onChange={(val) => setAttributes({ viewMode: val })}
+						options={[
+							{ value: "clip", label: __("Clip") },
+							{ value: "full", label: __("Full") },
+							{ value: "mini", label: __("Mini") },
+						]}
+					/>
+				</FlexBlock>
+				<FlexBlock></FlexBlock>
+			</Flex>
 			<TextareaControl
+				label={
+					<Flex>
+						<FlexItem>{__("Lyrics")}</FlexItem>
+						<FlexItem>
+							<ExternalLink
+								href="https://wordpress.org/plugins/rabbit-lyrics/"
+								target="_blank"
+							>
+								({__("user documents")})
+							</ExternalLink>
+						</FlexItem>
+					</Flex>
+				}
 				value={attributes.lyrics}
 				onChange={(val) => setAttributes({ lyrics: val })}
+				rows={Math.max((attributes.lyrics || "").split("\n").length, 4)}
 			/>
 		</div>
 	);
