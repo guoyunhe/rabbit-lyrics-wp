@@ -45,10 +45,6 @@ Yes. The best way is through GitHub https://github.com/guoyunhe/rabbit-lyrics-wp
 == Changelog ==
 
 = 0.1.0 =
-* Release
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
+* First release on WordPress.org
+* Block editor supports
+* Rabbit Lyrics 2.1.1
